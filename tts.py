@@ -12,7 +12,7 @@ class TTSNode:
     def __init__(self):
         rospy.init_node('tts_node', anonymous=True)
         self.soundhandle = SoundClient()
-        self.greeting_delay = 10  # Delay in seconds for each face
+        self.greeting_delay = 15  # Delay in seconds for each face
         self.last_greeting_times = {}  # Dictionary to track last greeting time for each face
         rospy.Subscriber('person_info', String, self.play_greeting)
         rospy.loginfo("TTS Node ready to greet!")
